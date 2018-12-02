@@ -1,0 +1,6 @@
+x = int(1)
+y = float(2.89)
+z = str("S1sd")
+print(x)
+print(y)
+print(z)
