@@ -13,11 +13,11 @@ public class DeretDescendingRekursif {
         return n;
     }
 
-    public static void descending(int n) {
+    public static int descending(int n) {
         if (n >= 0) {
             System.out.println("Tampil bilangan " + n);
-            n -= 1;
-            descending(n);
+            return descending(n - 1);
         }
+        return n;
     }
 }

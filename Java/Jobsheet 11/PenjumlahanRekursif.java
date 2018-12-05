@@ -4,7 +4,7 @@ public class PenjumlahanRekursif {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        plusRecursion(input());
+        System.out.println("Totalnya adalah : " + plusRecursion(input()));
     }
 
     public static int input() {
@@ -13,11 +13,10 @@ public class PenjumlahanRekursif {
         return n;
     }
 
-    public static void plusRecursion(int n) {
-        int total = 0;
-        for (int i = 1; i <= n; i++) {
-            total += i;
-        }
-        System.out.println("Totalnya adalah : " + total);
+    public static int plusRecursion(int n) {
+        if (n == 1)
+            return 1;
+        else
+            return plusRecursion(n - 1) + n;
     }
 }

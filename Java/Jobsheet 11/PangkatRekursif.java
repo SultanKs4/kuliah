@@ -4,7 +4,7 @@ public class PangkatRekursif {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        plusRecursion(input(), pangkat());
+        System.out.println("Hasilnya adalah : " + SqrtRecursion(input(), pangkat()));
     }
 
     public static int input() {
@@ -19,11 +19,10 @@ public class PangkatRekursif {
         return pangkat;
     }
 
-    public static void plusRecursion(int n, int pangkat) {
-        int total = 1;
-        for (int i = 1; i <= pangkat; i++) {
-            total *= n;
-        }
-        System.out.println("Totalnya adalah : " + total);
+    public static int SqrtRecursion(int n, int pangkat) {
+        if (pangkat == 0)
+            return 1;
+        else
+            return n * SqrtRecursion(n, pangkat - 1);
     }
 }
