@@ -15,7 +15,7 @@ public class PenjumlahanRekursif {
 
     public static int plusRecursion(int n) {
         if (n == 1)
-            return 1;
+            return 0;
         else
             return plusRecursion(n - 1) + n;
     }
