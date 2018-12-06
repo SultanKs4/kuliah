@@ -15,7 +15,7 @@ public class DeretDescendingRekursif {
 
     public static int descending(int n) {
         if (n >= 0) {
-            System.out.println("Tampil bilangan " + n);
+            System.out.print(n + " ");
             return descending(n - 1);
         }
         return n;
