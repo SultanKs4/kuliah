@@ -9,7 +9,7 @@ def main():
     print("1. Tambah List")
     print("2. Mengurangi List")
     print("====================")
-    pilihan = int(input("Masukkan pilihan : "))
+    pilihan = int(input("Masukkan pilihan :")) 
     kondisi(pilihan)
 
 
