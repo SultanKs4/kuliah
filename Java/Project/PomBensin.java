@@ -63,8 +63,7 @@ public class PomBensin {
         } else if ("Avtur".equals(outputJBB)) {
             Penerbangan();
         } else {
-            System.out.println("\nMasukkan Tidak Valid!");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tMasukkan Tidak Valid!\n\tSilahkan Coba lagi");
             PilihanMenu(inputPilihanMenu());
         }
     }
@@ -78,10 +77,10 @@ public class PomBensin {
             for (int j = 0; j < Bensin[i].length; j++) {
                 int h = j + 1;
                 if (j <= 2) {
-                    System.out.println("# " + h + ". " + Bensin[0][j] + "\t\t: "
+                    System.out.println("# " + h + ". " + Bensin[i][j] + "\t\t: "
                             + kursIDR.format(Integer.parseInt(Bensin[1][j])) + "\t#");
                 } else {
-                    System.out.println("# " + h + ". " + Bensin[0][j] + "\t: "
+                    System.out.println("# " + h + ". " + Bensin[i][j] + "\t: "
                             + kursIDR.format(Integer.parseInt(Bensin[1][j])) + "\t#");
                 }
             }
@@ -100,8 +99,7 @@ public class PomBensin {
         } else if ("R4".equals(jenisKendaraan)) {
             penggunaanKendaraanBensin();
         } else {
-            System.out.println("\nInputan tidak Valid");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             jenisKendaraanBensin();
         }
     }
@@ -143,8 +141,7 @@ public class PomBensin {
             System.out.println("\nAnda harus menggunakan Pertamax Turbo, Pertamax Racing");
             MenuBensin();
         } else {
-            System.out.println("\nInputan tidak Valid");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             penggunaanKendaraanBensin();
         }
     }
@@ -169,8 +166,7 @@ public class PomBensin {
                 NotifPemilihanBensin();
                 PembelianBensin();
             } else if (pilihan <= 0 || pilihan >= 3) {
-                System.out.println("\nMaaf, Input tidak Valid!");
-                System.out.println("Silahkan Coba Lagi");
+                System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
                 rekomendasiBensin(outputPenggunaanKendaraan);
             }
         } else if ("Pribadi".equals(outputPenggunaanKendaraan)) {
@@ -178,8 +174,7 @@ public class PomBensin {
                 NotifPemilihanBensin();
                 PembelianBensin();
             } else if (pilihan <= 0 || pilihan >= 5) {
-                System.out.println("\nMaaf, Input tidak Valid!");
-                System.out.println("Silahkan Coba Lagi");
+                System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
                 rekomendasiBensin(outputPenggunaanKendaraan);
             }
         } else if ("Dinas".equals(outputPenggunaanKendaraan)) {
@@ -187,8 +182,7 @@ public class PomBensin {
                 NotifPemilihanBensin();
                 PembelianBensin();
             } else if (pilihan <= 1 || pilihan >= 5) {
-                System.out.println("\nMaaf, Input tidak Valid!");
-                System.out.println("Silahkan Coba Lagi");
+                System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
                 rekomendasiBensin(outputPenggunaanKendaraan);
             }
         } else if ("Balap".equals(outputPenggunaanKendaraan)) {
@@ -196,8 +190,7 @@ public class PomBensin {
                 NotifPemilihanBensin();
                 PembelianBensin();
             } else if (pilihan <= 3 || pilihan >= 5) {
-                System.out.println("\nMaaf, Input tidak Valid!");
-                System.out.println("Silahkan Coba Lagi");
+                System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
                 rekomendasiBensin(outputPenggunaanKendaraan);
             }
         }
@@ -227,8 +220,7 @@ public class PomBensin {
         } else if ("Rp".equals(outputPilihanHitung)) {
             uangBensin();
         } else {
-            System.out.println("\nInput tidak Valid");
-            System.out.println("Silahkan Coba lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             pilihanHitungBensin();
         }
     }
@@ -237,8 +229,7 @@ public class PomBensin {
         System.out.print("\nMasukkan pembelian bensin (liter)    : ");
         liter = scanFloat.nextFloat();
         if (liter <= 0) {
-            System.out.println("\t\tPembelian tidak valid!");
-            System.out.println("\t\tSilahkan ulangi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             literBensin();
         }
     }
@@ -247,8 +238,7 @@ public class PomBensin {
         System.out.print("\nMasukkan pembelian bensin \t     : Rp. ");
         bill = scanFloat.nextFloat();
         if (bill <= 0) {
-            System.out.println("\t\tPembelian tidak valid!");
-            System.out.println("\t\tSilahkan ulangi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             uangBensin();
         }
     }
@@ -336,7 +326,7 @@ public class PomBensin {
         if (pay >= bill) {
             VIPMember();
         } else
-            System.out.println("\nUang Anda Kurang!");
+            System.out.println("\n\tUang Anda Kurang!");
     }
 
     public static void Diesel() {
@@ -348,10 +338,10 @@ public class PomBensin {
             for (int j = 0; j < Bensin[i].length; j++) {
                 int h = j + 1;
                 if (j <= 1) {
-                    System.out.println("# " + h + ". " + Bensin[2][j] + "\t\t: "
+                    System.out.println("# " + h + ". " + Bensin[i][j] + "\t\t: "
                             + kursIDR.format(Integer.parseInt(Bensin[3][j])) + "\t#");
                 } else {
-                    System.out.println("# " + h + ". " + Bensin[2][j] + "\t: "
+                    System.out.println("# " + h + ". " + Bensin[i][j] + "\t: "
                             + kursIDR.format(Integer.parseInt(Bensin[3][j])) + "\t#");
                 }
             }
@@ -371,8 +361,7 @@ public class PomBensin {
         } else if ("Lebih".equals(outputJenisKendaraan)) {
             penggunaanKendaraanDiesel();
         } else {
-            System.out.println("\nInputan tidak Valid");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             jenisKendaraanDiesel();
         }
     }
@@ -388,8 +377,7 @@ public class PomBensin {
         } else if ("Truk".equals(outputTipeKendaraan)) {
             System.out.print("\nPenggunaan Kendaraan Anda (Umum, Dinas) : ");
         } else {
-            System.out.println("\nInput tidak Valid!");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             R4Diesel();
         }
     }
@@ -414,8 +402,7 @@ public class PomBensin {
             System.out.println("\nKami menyarankan Anda untuk menggunakan Diesel Dex Lite, Pertamina Dex");
             MenuDiesel();
         } else {
-            System.out.println("\nInputan tidak Valid");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             penggunaanKendaraanDiesel();
         }
     }
@@ -436,9 +423,7 @@ public class PomBensin {
                 NotifPemilihanDiesel();
                 PembelianDiesel();
             } else if (pilihan <= 0 || pilihan >= 3) {
-                System.out.println("\nMaaf, Input tidak Valid!");
-                System.out.println("Anda akan kembali ke Awal");
-                System.out.println("Silahkan Coba Lagi");
+                System.out.println("\n\tMaaf, Input tidak Valid!\n\tAnda akan kembali ke Awal\n\tSilahkan Coba Lagi");
                 rekomendasiDiesel();
             }
         } else if ("Pribadi".equals(outputPenggunaanKendaraan) || "Dinas".equals(outputPenggunaanKendaraan)) {
@@ -446,9 +431,7 @@ public class PomBensin {
                 NotifPemilihanDiesel();
                 PembelianDiesel();
             } else if (pilihan <= 1 || pilihan >= 4) {
-                System.out.println("\nMaaf, Input tidak Valid!");
-                System.out.println("Anda akan kembali ke Awal");
-                System.out.println("Silahkan Coba Lagi");
+                System.out.println("\n\tMaaf, Input tidak Valid!\n\tAnda akan kembali ke Awal\n\tSilahkan Coba Lagi");
                 rekomendasiDiesel();
             }
         }
@@ -474,8 +457,7 @@ public class PomBensin {
         } else if ("Rp".equals(outputPilihanHitung)) {
             uangDiesel();
         } else {
-            System.out.println("Input tidak Valid");
-            System.out.println("Silahkan Coba lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             pilihanHitungDiesel();
         }
     }
@@ -484,8 +466,7 @@ public class PomBensin {
         System.out.print("\nMasukkan pembelian diesel (liter)    : ");
         liter = scanFloat.nextFloat();
         if (liter <= 0) {
-            System.out.println("\t\tAnda tidak beli");
-            System.out.println("\t\tSilahakn ulangi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             literDiesel();
         }
     }
@@ -494,8 +475,7 @@ public class PomBensin {
         System.out.print("\nMasukkan pembelian Diesel \t     : Rp.");
         bill = scanFloat.nextFloat();
         if (bill <= 0) {
-            System.out.println("\t\tPembelian tidak valid!");
-            System.out.println("\t\tSilahkan ulangi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             uangDiesel();
         }
     }
@@ -532,7 +512,7 @@ public class PomBensin {
         pilihanHitungDiesel();
         HitungDiesel();
         CurrencyIDR();
-        System.out.println("\n#########################################");
+        System.out.println("\n#########################################################");
         switch (pilihan) {
         case 1:
             System.out.printf("# Anda akan membeli Bio Solar \t     : %.3f %s %n", liter, literString);
@@ -553,16 +533,16 @@ public class PomBensin {
             System.out.println("# Total Harga adalah \t\t     : " + kursIDR.format(bill) + "\t#");
             break;
         default:
-            System.out.println("Masukkan Tidak Valid!");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             break;
         }
-        System.out.println("#########################################");
+        System.out.println("#########################################################");
         System.out.print("\nUang yang dibayarkan \t\t     : Rp.");
         pay = scanInt.nextInt();
         if (pay >= bill) {
             VIPMember();
         } else
-            System.out.println("\nUang Anda Kurang!");
+            System.out.println("\n\tUang Anda Kurang!");
     }
 
     public static void Penerbangan() {
@@ -574,10 +554,10 @@ public class PomBensin {
             for (int j = 0; j < Bensin[i].length; j++) {
                 int h = j + 1;
                 if (j == 1) {
-                    System.out.println("# " + h + ". " + Bensin[4][j] + "\t\t: "
+                    System.out.println("# " + h + ". " + Bensin[i][j] + "\t\t: "
                             + kursIDR.format(Integer.parseInt(Bensin[5][j])) + "\t#");
                 } else {
-                    System.out.println("# " + h + ". " + Bensin[4][j] + "\t: "
+                    System.out.println("# " + h + ". " + Bensin[i][j] + "\t: "
                             + kursIDR.format(Integer.parseInt(Bensin[5][j])) + "\t#");
                 }
             }
@@ -597,8 +577,7 @@ public class PomBensin {
         } else if ("Helikopter".equals(outputJenisKendaraan)) {
             penggunaanKendaraanPenerbangan();
         } else {
-            System.out.println("\nInputan tidak Valid");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             jenisKendaraanPenerbangan();
         }
     }
@@ -618,8 +597,7 @@ public class PomBensin {
                 || "Militer".equals(outputPenggunaanKendaraan)) {
             PembelianPenerbangan();
         } else {
-            System.out.println("\nInputan tidak Valid");
-            System.out.println("Silahkan Coba Lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             penggunaanKendaraanPenerbangan();
         }
     }
@@ -634,8 +612,7 @@ public class PomBensin {
         } else if ("Rp".equals(outputPilihanHitung)) {
             uangAvtur();
         } else {
-            System.out.println("Input tidak Valid");
-            System.out.println("Silahkan Coba lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             pilihanHitungAvtur();
         }
     }
@@ -644,8 +621,7 @@ public class PomBensin {
         System.out.print("\nMasukkan pembelian Avtur (liter)     : ");
         liter = scanFloat.nextFloat();
         if (liter <= 0) {
-            System.out.println("\t\tAnda tidak beli");
-            System.out.println("\t\tSilahakn ulangi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             literAvtur();
         }
     }
@@ -654,8 +630,7 @@ public class PomBensin {
         System.out.print("\nMasukkan pembelian Avtur \t     : Rp.");
         bill = scanFloat.nextFloat();
         if (bill <= 0) {
-            System.out.println("\t\tPembelian tidak valid!");
-            System.out.println("\t\tSilahkan ulangi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             uangAvtur();
         }
     }
@@ -685,7 +660,7 @@ public class PomBensin {
         pilihanHitungAvtur();
         HitungAvtur();
         CurrencyIDR();
-        System.out.println("\n#########################################");
+        System.out.println("\n#########################################################");
         System.out.printf("# Anda akan membeli Avtur sejumlah   : %.3f %s %n", liter, literString);
         if ("Umum".equals(outputPenggunaanKendaraan)) {
             System.out.println(
@@ -698,7 +673,7 @@ public class PomBensin {
                     "# Harga Avtur Pribadi adalah \t     : " + kursIDR.format(Integer.parseInt(Bensin[5][0])) + "\t#");
         }
         System.out.println("# Total Harga adalah \t\t     : " + kursIDR.format(bill) + "\t#");
-        System.out.println("#########################################");
+        System.out.println("#########################################################");
         System.out.print("\nUang yang dibayarkan \t\t     : Rp.");
         pay = scanInt.nextInt();
         if (pay >= bill) {
@@ -724,7 +699,7 @@ public class PomBensin {
     public static void VIPMemberLogin() {
         System.out.print("\nMasukkan VIP ID anda : ");
         int vipId = scanInt.nextInt();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < VIP.size(); i++) {
             if (vipId == VIP.get(i)) {
                 checkVIP = i;
                 break;
@@ -734,7 +709,7 @@ public class PomBensin {
             System.out.println("\n\tVIP ID anda valid");
             invoice();
         } else {
-            System.out.println("\n\tVIP ID anda tidak ditemukan\nAnda bukanlah VIP Member");
+            System.out.println("\n\tVIP ID anda tidak ditemukan\n\tAnda bukanlah VIP Member");
             invoice();
         }
     }
@@ -747,7 +722,7 @@ public class PomBensin {
         } else if (inputdaftarornon == 'n' || inputdaftarornon == 'N') {
             invoice();
         } else {
-            System.out.println("Input tidak valid\nSilahkan coba lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             VIPMemberDaftarornonVIP();
         }
     }
@@ -766,7 +741,7 @@ public class PomBensin {
             System.out.println("\nUmur anda belum mencukupi untuk mendapatkan VIP Member\nSilahkan membayar");
             invoice();
         } else {
-            System.out.println("Input tidak valid\nSilahkan coba lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             VIPMemberSignUp();
         }
     }
@@ -783,7 +758,7 @@ public class PomBensin {
         System.out.println("\n#########################################################");
         System.out.println("#\t\t\tINVOICE\t\t\t\t#");
         System.out.println("#########################################################");
-        System.out.println("#\t\t POM BENSIN INDONESIAN\t\t#");
+        System.out.println("#\t\t POM BENSIN INDONESIAN\t\t\t#");
         System.out.println("#\t\t       51.420.69\t\t\t#");
         System.out.println("#\t\t  REGIONAL JAWA TIMUR\t\t\t#");
         System.out.println("#########################################################");
@@ -794,7 +769,7 @@ public class PomBensin {
     public static void IntiInvoice() {
         CurrencyIDR();
         if (checkVIP >= 0) {
-            bill2 = bill * 0.15f;
+            bill2 = bill * 0.05f;
             bill3 = bill - bill2;
             kembalian = pay - bill3;
         } else if (checkVIP < 0) {
@@ -811,8 +786,6 @@ public class PomBensin {
             if (checkVIP >= 0) {
                 System.out.println("# Diskon VIP \t\t\t: " + kursIDR.format(bill2) + "    \t#");
                 System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill3) + "    \t#");
-            } else if (checkVIP < 0) {
-                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
             }
             System.out.println("# Uang Tunai \t\t\t: " + kursIDR.format(pay) + "    \t#");
             System.out.println("# Kembalian \t\t\t: " + kursIDR.format(kembalian) + "\t\t#");
@@ -831,11 +804,10 @@ public class PomBensin {
             System.out.println("# Jenis Diesel \t\t\t: " + jenisDieselInvoice + "\t\t#");
             System.out.printf("# Jumlah Liter \t\t\t: %.3f %s %n", liter, literString);
             System.out.println("# Harga Diesel \t\t\t: " + hargaDieselInvoice + "\t\t#");
+            System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
             if (checkVIP >= 0) {
                 System.out.println("# Diskon VIP \t\t\t: " + kursIDR.format(bill2) + "    \t#");
                 System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill3) + "    \t#");
-            } else if (checkVIP < 0) {
-                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
             }
             System.out.println("# Uang Tunai \t\t\t: " + kursIDR.format(pay) + "    \t#");
             System.out.println("# Kembalian \t\t\t: " + kursIDR.format(kembalian) + "\t\t#");
@@ -846,11 +818,10 @@ public class PomBensin {
             System.out.println("# Jenis Avtur \t\t\t: " + jenisAvturInvoice + "\t\t#");
             System.out.printf("# Jumlah Liter \t\t\t: %.3f %s %n", liter, literString);
             System.out.println("# Harga Avtur \t\t\t: " + hargaAvturInvoice + "\t\t#");
+            System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
             if (checkVIP >= 0) {
                 System.out.println("# Diskon VIP \t\t\t: " + kursIDR.format(bill2) + "    \t#");
                 System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill3) + "    \t#");
-            } else if (checkVIP < 0) {
-                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
             }
             System.out.println("# Uang Tunai \t\t\t: " + kursIDR.format(pay) + "    \t#");
             System.out.println("# Kembalian \t\t\t: " + kursIDR.format(kembalian) + "\t\t#");
@@ -863,17 +834,17 @@ public class PomBensin {
         if (bill >= 100000) {
             System.out.println("#\t\t\tSELAMAT!\t\t\t#");
             System.out.println("#########################################################");
-            if (bill >= 1000000) {
+            if (bill > 1000000) {
                 cashback = kembalian + 50000;
                 System.out.println("# Karena Anda telah membeli lebih dari Rp.1.000.000,00 \t#");
                 System.out.println("# Anda mendapatkan Cashback sebesar  : Rp.50.000,00 \t#");
                 System.out.println("# Total kembalian anda adalah \t     : " + kursIDR.format(cashback) + "\t#");
-            } else if (bill >= 500000) {
+            } else if (bill > 500000) {
                 cashback = kembalian + 25000;
                 System.out.println("# Karena Anda telah membeli lebih dari Rp.500.000,00 \t#");
                 System.out.println("# Anda mendapatkan Cashback sebesar  : Rp.25.000,00 \t#");
                 System.out.println("# Total kembalian anda adalah \t     : " + kursIDR.format(cashback) + "\t#");
-            } else if (bill >= 100000) {
+            } else if (bill > 100000) {
                 cashback = kembalian + 10000;
                 System.out.println("# Karena Anda telah membeli lebih dari Rp.100.000,00 \t#");
                 System.out.println("# Anda mendapatkan Cashback sebesar  : Rp.10.000,00 \t#");
@@ -929,14 +900,14 @@ public class PomBensin {
     }
 
     public static boolean ulangi() {
-        System.out.print("\nBeli lagi (Y/N) ? ");
+        System.out.print("\n\tBeli lagi (Y/N) ? ");
         ulangi = scanChar.next().charAt(0);
         if (ulangi == 'N' || ulangi == 'n') {
             System.out.println("\n\tTerima Kasih");
         } else if (ulangi == 'Y' || ulangi == 'y') {
             return ulangi == 'Y' || ulangi == 'y';
         } else {
-            System.out.println("\tInputan tidak valid!\n\tCoba lagi");
+            System.out.println("\n\tInputan tidak Valid\n\tSilahkan Coba Lagi");
             ulangi();
         }
         return ulangi == 'Y' || ulangi == 'y';
