@@ -5,13 +5,13 @@ public class PomBensin {
     static Locale localeID = new Locale("id", "ID");
     static DecimalFormat kursIDR = (DecimalFormat) DecimalFormat.getCurrencyInstance();
     static DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
-    static int pilihan, checkVIP;
+    static int pilihan, checkVIP = -1;
     static String jenisKendaraan, penggunaanKendaraan, outputPenggunaanKendaraan, tipeKendaraan, outputTipeKendaraan,
             outputJenisKendaraan, pilihanHitung, outputPilihanHitung, jenisBahanBakar, outputJBB, jenisBensinInvoice,
             hargaBensinInvoice, jenisDieselInvoice, tipeDieselInvoice, hargaDieselInvoice, jenisAvturInvoice,
             hargaAvturInvoice, literString = "L      \t#";
     static char ulangi;
-    static float liter, bill, pay, cashback, kembalian;
+    static float liter, bill, bill2, bill3, pay, cashback, kembalian;
     static Scanner scanInt = new Scanner(System.in);
     static Scanner scanString = new Scanner(System.in);
     static Scanner scanChar = new Scanner(System.in);
@@ -36,6 +36,7 @@ public class PomBensin {
     }
 
     public static void TampilanMenu() {
+        VIP.add(1841720019);
         System.out.println("#########################################");
         System.out.println("#\t   POM BENSIN INDONESIAN\t#\n#\t\t51.420.69\t\t#\n#\t  REGIONAL JAWA TIMUR\t\t#");
         System.out.println("#########################################");
@@ -296,7 +297,7 @@ public class PomBensin {
         pilihanHitungBensin();
         hitungBensin();
         CurrencyIDR();
-        System.out.println("\n#########################################");
+        System.out.println("\n#########################################################");
         switch (pilihan) {
         case 1:
             System.out.printf("# Anda akan membeli Premium \t : %.3f %s %n", liter, literString);
@@ -329,7 +330,7 @@ public class PomBensin {
             System.out.println("# Total Harga adalah \t\t    : " + kursIDR.format(bill) + "\t#");
             break;
         }
-        System.out.println("#########################################");
+        System.out.println("#########################################################");
         System.out.print("\nUang yang dibayarkan \t\t : Rp.");
         pay = scanInt.nextInt();
         if (pay >= bill) {
@@ -559,7 +560,7 @@ public class PomBensin {
         System.out.print("\nUang yang dibayarkan \t\t     : Rp.");
         pay = scanInt.nextInt();
         if (pay >= bill) {
-            invoice();
+            VIPMember();
         } else
             System.out.println("\nUang Anda Kurang!");
     }
@@ -701,48 +702,49 @@ public class PomBensin {
         System.out.print("\nUang yang dibayarkan \t\t     : Rp.");
         pay = scanInt.nextInt();
         if (pay >= bill) {
-            invoice();
+            VIPMember();
         } else
             System.out.println("\nUang Anda Kurang!");
 
     }
 
     public static void VIPMember() {
-        System.out.print("Apakah anda mempunyai VIP Member ? (Y/N) : ");
+        System.out.print("\nApakah anda mempunyai VIP Member ? (Y/N) : ");
         char inputVIP = scanChar.next().charAt(0);
         if (inputVIP == 'Y' || inputVIP == 'y') {
             VIPMemberLogin();
         } else if (inputVIP == 'n' || inputVIP == 'N') {
             VIPMemberDaftarornonVIP();
         } else {
-            System.out.println("Input tidak valid\nSilahkan coba lagi");
+            System.out.println("\nInput tidak valid\nSilahkan coba lagi");
             VIPMember();
         }
     }
 
     public static void VIPMemberLogin() {
-        System.out.print("Masukkan VIP ID anda : ");
+        System.out.print("\nMasukkan VIP ID anda : ");
         int vipId = scanInt.nextInt();
-        checkVIP = -1;
-        for (int i = 0; i < VIP.length; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
             if (vipId == VIP.get(i)) {
-                checkVIP += i;
+                checkVIP = i;
                 break;
             }
         }
-        if (checkVIP > 0) {
-            System.out.println("VIP ID anda valid");
+        if (checkVIP >= 0) {
+            System.out.println("\n\tVIP ID anda valid");
+            invoice();
         } else {
-            System.out.println("VIP ID anda tidak ditemukan");
+            System.out.println("\n\tVIP ID anda tidak ditemukan\nAnda bukanlah VIP Member");
+            invoice();
         }
     }
 
     public static void VIPMemberDaftarornonVIP() {
-        System.out.print("Ingin menjadi VIP Member ? (Y/N)");
+        System.out.print("Ingin menjadi VIP Member ? (Y/N) : ");
         char inputdaftarornon = scanChar.next().charAt(0);
-        if (inputVIP == 'Y' || inputVIP == 'y') {
+        if (inputdaftarornon == 'Y' || inputdaftarornon == 'y') {
             VIPMemberSignUp();
-        } else if (inputVIP == 'n' || inputVIP == 'N') {
+        } else if (inputdaftarornon == 'n' || inputdaftarornon == 'N') {
             invoice();
         } else {
             System.out.println("Input tidak valid\nSilahkan coba lagi");
@@ -754,14 +756,14 @@ public class PomBensin {
         System.out.print("Masukkan umur anda : ");
         int umur = scanInt.nextInt();
         if (umur > 19) {
-            int vipRandom = (int) (Math.random() * 99999999 + 10000000);
+            int vipRandom = (int) (Math.random() * 999999999 + 100000000);
+            VIP.add(vipRandom);
             System.out.print("VIP ID anda adalah : ");
             System.out.print(vipRandom);
-            System.out.println("Silahkan");
-            VIP.add(vipRandom);
+            System.out.println("\nHarap catat ID anda\nSilahkan gunakan VIP ID diatas");
             VIPMemberLogin();
         } else if (umur > 0 && umur <= 19) {
-            System.out.println("Umur anda belum mencukupi untuk mendapatkan VIP Member\nSilahkan membayar");
+            System.out.println("\nUmur anda belum mencukupi untuk mendapatkan VIP Member\nSilahkan membayar");
             invoice();
         } else {
             System.out.println("Input tidak valid\nSilahkan coba lagi");
@@ -778,20 +780,26 @@ public class PomBensin {
     public static void TampilanAtasInvoice() {
         Date dNow = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE dd-MMMM-yyyy 'pada' HH:mm:ss", localeID);
-        System.out.println("\n#########################################");
+        System.out.println("\n#########################################################");
         System.out.println("#\t\t\tINVOICE\t\t\t\t#");
-        System.out.println("#########################################");
-        System.out.println("#\t    POM BENSIN INDONESIAN\t\t#");
+        System.out.println("#########################################################");
+        System.out.println("#\t\t POM BENSIN INDONESIAN\t\t#");
         System.out.println("#\t\t       51.420.69\t\t\t#");
         System.out.println("#\t\t  REGIONAL JAWA TIMUR\t\t\t#");
-        System.out.println("#########################################");
+        System.out.println("#########################################################");
         System.out.println("#\t   " + dateFormat.format(dNow) + "\t\t#");
-        System.out.println("#########################################");
+        System.out.println("#########################################################");
     }
 
     public static void IntiInvoice() {
         CurrencyIDR();
-        kembalian = pay - bill;
+        if (checkVIP >= 0) {
+            bill2 = bill * 0.15f;
+            bill3 = bill - bill2;
+            kembalian = pay - bill3;
+        } else if (checkVIP < 0) {
+            kembalian = pay - bill;
+        }
         if ("Bensin".equals(outputJBB)) {
             JenisBensinInvoice();
             System.out.println("# Jenis Kendaraan \t\t: " + jenisKendaraan + "\t\t\t#");
@@ -800,6 +808,12 @@ public class PomBensin {
             System.out.printf("# Jumlah Liter \t\t\t: %.3f %s %n", liter, literString);
             System.out.println("# Harga Bensin \t\t\t: " + hargaBensinInvoice + "\t\t#");
             System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
+            if (checkVIP >= 0) {
+                System.out.println("# Diskon VIP \t\t\t: " + kursIDR.format(bill2) + "    \t#");
+                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill3) + "    \t#");
+            } else if (checkVIP < 0) {
+                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
+            }
             System.out.println("# Uang Tunai \t\t\t: " + kursIDR.format(pay) + "    \t#");
             System.out.println("# Kembalian \t\t\t: " + kursIDR.format(kembalian) + "\t\t#");
         } else if ("Diesel".equals(outputJBB)) {
@@ -817,7 +831,12 @@ public class PomBensin {
             System.out.println("# Jenis Diesel \t\t\t: " + jenisDieselInvoice + "\t\t#");
             System.out.printf("# Jumlah Liter \t\t\t: %.3f %s %n", liter, literString);
             System.out.println("# Harga Diesel \t\t\t: " + hargaDieselInvoice + "\t\t#");
-            System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
+            if (checkVIP >= 0) {
+                System.out.println("# Diskon VIP \t\t\t: " + kursIDR.format(bill2) + "    \t#");
+                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill3) + "    \t#");
+            } else if (checkVIP < 0) {
+                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
+            }
             System.out.println("# Uang Tunai \t\t\t: " + kursIDR.format(pay) + "    \t#");
             System.out.println("# Kembalian \t\t\t: " + kursIDR.format(kembalian) + "\t\t#");
         } else if ("Avtur".equals(outputJBB)) {
@@ -827,11 +846,16 @@ public class PomBensin {
             System.out.println("# Jenis Avtur \t\t\t: " + jenisAvturInvoice + "\t\t#");
             System.out.printf("# Jumlah Liter \t\t\t: %.3f %s %n", liter, literString);
             System.out.println("# Harga Avtur \t\t\t: " + hargaAvturInvoice + "\t\t#");
-            System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
+            if (checkVIP >= 0) {
+                System.out.println("# Diskon VIP \t\t\t: " + kursIDR.format(bill2) + "    \t#");
+                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill3) + "    \t#");
+            } else if (checkVIP < 0) {
+                System.out.println("# Jumlah Harga \t\t\t: " + kursIDR.format(bill) + "    \t#");
+            }
             System.out.println("# Uang Tunai \t\t\t: " + kursIDR.format(pay) + "    \t#");
             System.out.println("# Kembalian \t\t\t: " + kursIDR.format(kembalian) + "\t\t#");
         }
-        System.out.println("#########################################");
+        System.out.println("#########################################################");
     }
 
     public static void cashback() {
@@ -876,7 +900,6 @@ public class PomBensin {
             jenisBensinInvoice = "Pertamax Racing";
             hargaBensinInvoice = kursIDR.format(Integer.parseInt(Bensin[1][4]));
         }
-        kembalian = pay - bill;
     }
 
     public static void JenisDieselInvoice() {
@@ -890,7 +913,6 @@ public class PomBensin {
             jenisDieselInvoice = "Pertamina Dex";
             hargaDieselInvoice = kursIDR.format(Integer.parseInt(Bensin[3][2]));
         }
-        kembalian = pay - bill;
     }
 
     public static void JenisAvturInvoice() {
@@ -910,12 +932,11 @@ public class PomBensin {
         System.out.print("\nBeli lagi (Y/N) ? ");
         ulangi = scanChar.next().charAt(0);
         if (ulangi == 'N' || ulangi == 'n') {
-            System.out.println("\nTerima Kasih");
+            System.out.println("\n\tTerima Kasih");
         } else if (ulangi == 'Y' || ulangi == 'y') {
             return ulangi == 'Y' || ulangi == 'y';
         } else {
-            System.out.println("Inputan tidak valid!");
-            System.out.println("Coba lagi");
+            System.out.println("\tInputan tidak valid!\n\tCoba lagi");
             ulangi();
         }
         return ulangi == 'Y' || ulangi == 'y';
