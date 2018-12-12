@@ -726,11 +726,11 @@ public class PomBensin {
         checkVIP = -1;
         for (int i = 0; i < VIP.length; i++) {
             if (vipId == VIP.get(i)) {
-                temp += i;
+                checkVIP += i;
                 break;
             }
         }
-        if (temp > 0) {
+        if (checkVIP > 0) {
             System.out.println("VIP ID anda valid");
         } else {
             System.out.println("VIP ID anda tidak ditemukan");
@@ -757,6 +757,7 @@ public class PomBensin {
             int vipRandom = (int) (Math.random() * 99999999 + 10000000);
             System.out.print("VIP ID anda adalah : ");
             System.out.print(vipRandom);
+            System.out.println("Silahkan");
             VIP.add(vipRandom);
             VIPMemberLogin();
         } else if (umur > 0 && umur <= 19) {
