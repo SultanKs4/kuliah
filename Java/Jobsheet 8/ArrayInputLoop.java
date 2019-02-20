@@ -13,5 +13,8 @@ public class ArrayInputLoop {
         for (int i = 0; i < 6; i++) {
             System.out.println("Nilai UAS ke-" + i + " adalah: " + nilaiUAS[i]);
         }
+        if (sc != null) {
+            sc.close();
+        }
     }
 }

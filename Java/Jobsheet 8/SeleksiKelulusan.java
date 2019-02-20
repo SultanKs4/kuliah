@@ -19,5 +19,8 @@ public class SeleksiKelulusan {
                 System.out.println("Mahasiswa ke-" + i + " lulus!");
             }
         }
+        if (sc != null) {
+            sc.close();
+        }
     }
 }

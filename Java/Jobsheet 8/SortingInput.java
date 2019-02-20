@@ -26,5 +26,8 @@ public class SortingInput {
         for (int i = 0; i < angka.length; i++) {
             System.out.print(angka[i] + " ");
         }
+        if (scan != null) {
+            scan.close();
+        }
     }
 }
