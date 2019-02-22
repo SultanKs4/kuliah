@@ -27,8 +27,6 @@ public class PacManMain {
         System.out.println("!RULES!");
         System.out.println(
                 "Posisi X & Y Tidak boleh dibawah 0, X tidak boleh melebihi Panjang, dan Y tidak boleh melebihi Tinggi");
-        System.out.println("!POSISI Sekarang!");
-        pm1BEnd.printPosition();
     }
 
     public static void mainPacMan() {
@@ -37,6 +35,8 @@ public class PacManMain {
                 System.out.println("\nGAME OVER!");
                 break;
             }
+            System.out.println("\n!POSISI Sekarang!");
+            pm1BEnd.printPosition();
             System.out.print("\nArah Gerak W (Atas) / A (Kiri) / S (Bawah) / D (Kanan) : ");
             char arah = scanChar.next().toUpperCase().charAt(0);
             if (arah == 'W') {
@@ -54,8 +54,6 @@ public class PacManMain {
             } else {
                 System.out.println("\n!Hanya boleh W/A/S/D saja!");
             }
-            System.out.println("\n!POSISI Sekarang!");
-            pm1BEnd.printPosition();
         }
     }
 }

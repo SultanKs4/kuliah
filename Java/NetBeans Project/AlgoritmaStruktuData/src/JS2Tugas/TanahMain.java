@@ -33,6 +33,6 @@ public class TanahMain {
                 largest = i + 1;
             }
         }
-        System.out.println("Tanah terluas : Tanah " + largest);
+        System.out.println("\nTanah terluas : Tanah " + largest);
     }
 }

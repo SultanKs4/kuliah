@@ -19,7 +19,7 @@ public class Barang {
         } else if (hitungHargaTotal() >= 50000 && hitungHargaTotal() <= 100000) {
             diskon = hitungHargaTotal() * 5 / 100;
         } else
-            diskon = hitungHargaTotal();
+            diskon = 0;
 
         return diskon;
     }
