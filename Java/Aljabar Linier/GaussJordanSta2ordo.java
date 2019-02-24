@@ -12,6 +12,23 @@ public class GaussJordanSta2ordo {
         prosesdapatBdanA();
     }
 
+    public static void printMatriks() {
+        int valuetemp;
+        for (int i = 0; i < 2; i++) {
+            valuetemp = 0;
+            for (int j = 0; j < 2; j++) {
+                System.out.print(matriks[i][j] + " ");
+            }
+            System.out.print("| ");
+            if (i == 1) {
+                valuetemp = 1;
+            }
+            for (int k = valuetemp; k <= valuetemp; k++) {
+                System.out.println(value[k]);
+            }
+        }
+    }
+
     public static void inputMatriks() {
         int valuetemp;
         System.out.println("Gauss Jordan Ordo 2x2\n");
@@ -32,99 +49,44 @@ public class GaussJordanSta2ordo {
             }
         }
         System.out.println("\nNilai Matriks yang sudah di input :");
-        for (int i = 0; i < 2; i++) {
-            valuetemp = 0;
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.print("| ");
-            if (i == 1) {
-                valuetemp = 1;
-            }
-            for (int k = valuetemp; k <= valuetemp; k++) {
-                System.out.println(value[k]);
-            }
-        }
+        printMatriks();
     }
 
     public static void prosesMatrikstoZeroStep1() {
-        int valuetemp;
         double p = matriks[1][0] / matriks[0][0];
         for (int j = 0; j < 2; j++) {
             matriks[1][j] -= p * matriks[0][j];
         }
         value[1] -= p * value[0];
         System.out.println("\n*Menjadikan matriks baris 2 kolom 1 menjadi 0");
-        for (int i = 0; i < 2; i++) {
-            valuetemp = 0;
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.print("| ");
-            if (i == 1) {
-                valuetemp = 1;
-            }
-            for (int k = valuetemp; k <= valuetemp; k++) {
-                System.out.println(value[k]);
-            }
+        printMatriks();
+
+        if (matriks[1][1] != 1) {
+            System.out.println("\n*Menjadikan matriks baris 2 kolom 2 menjadi 1");
+            value[1] /= matriks[1][1];
+            matriks[1][1] /= matriks[1][1];
         }
 
-        value[1] /= matriks[1][1];
-        matriks[1][1] /= matriks[1][1];
-        System.out.println("\n*Menjadikan matriks baris 2 kolom 2 menjadi 1");
-        for (int i = 0; i < 2; i++) {
-            valuetemp = 0;
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.print("| ");
-            if (i == 1) {
-                valuetemp = 1;
-            }
-            for (int k = valuetemp; k <= valuetemp; k++) {
-                System.out.println(value[k]);
-            }
-        }
+        printMatriks();
         prosesMatrikstoZeroStep2();
     }
 
     public static void prosesMatrikstoZeroStep2() {
-        int valuetemp;
         double p = matriks[0][1] / matriks[1][1];
         for (int j = 0; j < 2; j++) {
             matriks[0][j] -= p * matriks[1][j];
         }
         value[0] -= p * value[1];
         System.out.println("\n*Menjadikan matriks baris 1 kolom 2 menjadi 0");
-        for (int i = 0; i < 2; i++) {
-            valuetemp = 0;
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.print("| ");
-            if (i == 1) {
-                valuetemp = 1;
-            }
-            for (int k = valuetemp; k <= valuetemp; k++) {
-                System.out.println(value[k]);
-            }
+        printMatriks();
+
+        if (matriks[0][0] != 1) {
+            System.out.println("\n*Menjadikan matriks baris 1 kolom 1 menjadi 1");
+            value[0] /= matriks[0][0];
+            matriks[0][0] /= matriks[0][0];
         }
-        value[0] /= matriks[0][0];
-        matriks[0][0] /= matriks[0][0];
-        System.out.println("\n*Menjadikan matriks baris 1 kolom 1 menjadi 1");
-        for (int i = 0; i < 2; i++) {
-            valuetemp = 0;
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.print("| ");
-            if (i == 1) {
-                valuetemp = 1;
-            }
-            for (int k = valuetemp; k <= valuetemp; k++) {
-                System.out.println(value[k]);
-            }
-        }
+
+        printMatriks();
     }
 
     public static void prosesdapatBdanA() {

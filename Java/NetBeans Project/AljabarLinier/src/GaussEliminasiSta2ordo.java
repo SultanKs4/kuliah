@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ *
+ * @author Sultan
+ */
 public class GaussEliminasiSta2ordo {
     public static Scanner scan = new Scanner(System.in);
     public static double[][] matriks = new double[2][2];
@@ -10,23 +14,6 @@ public class GaussEliminasiSta2ordo {
         inputMatriks();
         prosesMatrikstoZero();
         prosesdapatBdanA();
-    }
-
-    public static void printMatriks() {
-        int valuetemp;
-        for (int i = 0; i < 2; i++) {
-            valuetemp = 0;
-            for (int j = 0; j < 2; j++) {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.print("| ");
-            if (i == 1) {
-                valuetemp = 1;
-            }
-            for (int k = valuetemp; k <= valuetemp; k++) {
-                System.out.println(value[k]);
-            }
-        }
     }
 
     public static void inputMatriks() {
@@ -49,17 +36,43 @@ public class GaussEliminasiSta2ordo {
             }
         }
         System.out.println("\nNilai Matriks yang sudah di input :");
-        printMatriks();
+        for (int i = 0; i < 2; i++) {
+            valuetemp = 0;
+            for (int j = 0; j < 2; j++) {
+                System.out.print(matriks[i][j] + " ");
+            }
+            System.out.print("| ");
+            if (i == 1) {
+                valuetemp = 1;
+            }
+            for (int k = valuetemp; k <= valuetemp; k++) {
+                System.out.println(value[k]);
+            }
+        }
     }
 
     public static void prosesMatrikstoZero() {
+        int valuetemp;
+        System.out.println("\n*Menjadikan matriks baris 2 kolom 1 menjadi 0");
         double p = matriks[1][0] / matriks[0][0];
         for (int j = 0; j < 2; j++) {
             matriks[1][j] -= p * matriks[0][j];
         }
         value[1] -= p * value[0];
-        System.out.println("\n*Menjadikan matriks baris 2 kolom 1 menjadi 0");
-        printMatriks();
+
+        for (int i = 0; i < 2; i++) {
+            valuetemp = 0;
+            for (int j = 0; j < 2; j++) {
+                System.out.print(matriks[i][j] + " ");
+            }
+            System.out.print("| ");
+            if (i == 1) {
+                valuetemp = 1;
+            }
+            for (int k = valuetemp; k <= valuetemp; k++) {
+                System.out.println(value[k]);
+            }
+        }
     }
 
     public static void prosesdapatBdanA() {
