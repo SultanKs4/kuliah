@@ -2,14 +2,18 @@ import java.util.Scanner;
 
 public class GaussJordanSta2ordo {
     public static Scanner scan = new Scanner(System.in);
+    public static Scanner scanChar = new Scanner(System.in);
     public static double[][] matriks = new double[2][2];
     public static double[] value = new double[2];
     public static double a, b;
+    public static char ulangi;
 
     public static void main(String[] args) {
-        inputMatriks();
-        prosesMatrikstoZeroStep1();
-        prosesdapatBdanA();
+        do {
+            inputMatriks();
+            prosesMatrikstoZeroStep1();
+            prosesdapatBdanA();
+        } while (ulangi());
     }
 
     public static void printMatriks() {
@@ -65,9 +69,9 @@ public class GaussJordanSta2ordo {
             System.out.println("\n*Menjadikan matriks baris 2 kolom 2 menjadi 1");
             value[1] /= matriks[1][1];
             matriks[1][1] /= matriks[1][1];
+            printMatriks();
         }
 
-        printMatriks();
         prosesMatrikstoZeroStep2();
     }
 
@@ -84,9 +88,8 @@ public class GaussJordanSta2ordo {
             System.out.println("\n*Menjadikan matriks baris 1 kolom 1 menjadi 1");
             value[0] /= matriks[0][0];
             matriks[0][0] /= matriks[0][0];
+            printMatriks();
         }
-
-        printMatriks();
     }
 
     public static void prosesdapatBdanA() {
@@ -95,5 +98,19 @@ public class GaussJordanSta2ordo {
         System.out.println("\nA adalah : " + a);
         System.out.println("B adalah : " + b);
 
+    }
+
+    public static boolean ulangi() {
+        System.out.print("\nUlang lagi(Y/N) ? ");
+        ulangi = scanChar.next().charAt(0);
+        if (ulangi == 'N' || ulangi == 'n') {
+            System.out.println("\nTerima Kasih");
+        } else if (ulangi == 'Y' || ulangi == 'y') {
+            return ulangi == 'Y' || ulangi == 'y';
+        } else {
+            System.out.println("\nInputan tidak Valid\nSilahkan Coba Lagi");
+            ulangi();
+        }
+        return ulangi == 'Y' || ulangi == 'y';
     }
 }
