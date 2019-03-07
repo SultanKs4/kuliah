@@ -30,5 +30,8 @@ public class MaxminMain {
         System.out.println("\nDivide Conquer");
         System.out.println("Nilai Minimal : " + hasil.minimum + "\nNilai Maksimal : " + hasil.maximum);
         System.out.println();
+        if (sc != null) {
+            sc.close();
+        }
     }
 }

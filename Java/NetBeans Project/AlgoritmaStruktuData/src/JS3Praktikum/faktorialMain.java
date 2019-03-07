@@ -16,5 +16,8 @@ public class faktorialMain {
 
         fakObjek.faktorialBF();
         System.out.println("Nilai Faktorial Divide Conquer : " + fakObjek.faktorialDC(fakObjek.nilai));
+        if (sc != null) {
+            sc.close();
+        }
     }
 }

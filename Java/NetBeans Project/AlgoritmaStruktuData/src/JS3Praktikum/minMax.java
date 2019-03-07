@@ -12,6 +12,8 @@ public class minMax {
         Maxmin hasil1 = new Maxmin();
         Maxmin hasil2 = new Maxmin();
 
+        System.out.println("awal : " + indeks_awal);
+        System.out.println("akhir : " + indeks_akhir);
         if (indeks_awal == indeks_akhir) {
             hasil.minimum = hasil.maximum = arr[indeks_awal];
         } else if (indeks_akhir - indeks_awal == 1) {
@@ -28,7 +30,14 @@ public class minMax {
             max_min(arr, indeks_tengah + 1, indeks_akhir, hasil2);
 
             hasil.minimum = (hasil1.minimum < hasil2.minimum) ? hasil1.minimum : hasil2.minimum;
+
             hasil.maximum = (hasil1.maximum > hasil2.maximum) ? hasil1.maximum : hasil2.maximum;
         }
+        System.out.println("hasil min : " + hasil.minimum);
+        System.out.println("hasil1 min : " + hasil1.minimum);
+        System.out.println("hasil2 min : " + hasil2.minimum);
+        System.out.println("hasil max : " + hasil.maximum);
+        System.out.println("hasil1 max : " + hasil1.maximum);
+        System.out.println("hasil2 max : " + hasil2.maximum);
     }
 }

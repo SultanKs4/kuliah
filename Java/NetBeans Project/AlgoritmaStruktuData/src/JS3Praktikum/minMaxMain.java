@@ -32,5 +32,8 @@ public class minMaxMain {
         System.out.println("Brute Force");
         System.out.println("Nilai Minimal : " + min);
         System.out.println("Nilai Maksimal : " + max);
+        if (sc != null) {
+            sc.close();
+        }
     }
 }
