@@ -4,8 +4,9 @@ import java.util.Scanner;
  * @author Sultan GaussEliminasiDyn
  */
 
-public class GaussEliminasiDyn {
+public class GaussJordanDyn {
     public static Scanner scanInt = new Scanner(System.in);
+    public static Scanner scanDoub = new Scanner(System.in);
     public static Scanner scanChar = new Scanner(System.in);
     public static double[][] matriksArr;
     public static double[] value;
@@ -15,8 +16,8 @@ public class GaussEliminasiDyn {
     public static void main(String[] args) {
         do {
             inputMatriks();
-            prosesMenjadi0();
-            prosesDapatHasil();
+            prosesMenjadi010();
+            prosesdapatBdanA();
         } while (ulangi());
     }
 
@@ -28,9 +29,9 @@ public class GaussEliminasiDyn {
         System.out.println("Masukkan nilai matriks : ");
         for (int i = 0; i < matriksArr.length; i++) {
             for (int j = 0; j < matriksArr[i].length; j++) {
-                matriksArr[i][j] = scanInt.nextDouble();
+                matriksArr[i][j] = scanDoub.nextDouble();
             }
-            value[i] = scanInt.nextDouble();
+            value[i] = scanDoub.nextDouble();
         }
         System.out.println("\nNilai Matriks yang sudah di input :");
         printMatriks();
@@ -53,7 +54,7 @@ public class GaussEliminasiDyn {
         }
     }
 
-    public static void prosesMenjadi0() {
+    public static void prosesMenjadi010() {
         for (int i = 0; i < matriksArr.length - 1; i++) {
             for (int j = i + 1; j < matriksArr.length; j++) {
                 double factor = matriksArr[j][i] / matriksArr[i][i];
@@ -62,21 +63,36 @@ public class GaussEliminasiDyn {
                     matriksArr[j][k] -= factor * matriksArr[i][k];
             }
         }
-        System.out.println("\n*Menjadikan matriks 0 dibawah diagonal");
+        System.out.println("\n*Menjadikan matriks dibawah diagonal menjadi 0");
+        printMatriks();
+
+        for (int i = matriksArr.length - 1; i > 0; i--) {
+            for (int j = i - 1; j >= 0; j--) {
+                double factor = matriksArr[j][i] / matriksArr[i][i];
+                value[j] -= factor * value[i];
+                for (int k = matriksArr.length - 1; k >= i; k--)
+                    matriksArr[j][k] -= factor * matriksArr[i][k];
+            }
+        }
+        System.out.println("\n*Menjadikan matriks diatas diagonal menjadi 0");
+        printMatriks();
+
+        for (int i = 0; i < matriksArr.length; i++) {
+            value[i] /= matriksArr[i][i];
+            matriksArr[i][i] /= matriksArr[i][i];
+        }
+        System.out.println("\n*Menjadikan matriks diagonal menjadi 1");
         printMatriks();
     }
 
-    public static void prosesDapatHasil() {
-        double[] solution = new double[matriksArr.length];
-        for (int i = matriksArr.length - 1; i >= 0; i--) {
-            double sum = 0.0;
-            for (int j = i + 1; j < matriksArr.length; j++)
-                sum += matriksArr[i][j] * solution[j];
-            solution[i] = (value[i] - sum) / matriksArr[i][i];
-        }
+    public static void prosesdapatBdanA() {
         System.out.println("\nHasilnya : ");
-        for (int i = 0; i < solution.length; i++)
-            System.out.printf("%.3f\n", solution[i]);
+        char A = 65;
+        for (int i = 0; i < value.length; i++) {
+            System.out.print(A);
+            System.out.printf("=%.3f\n", value[i]);
+            A++;
+        }
     }
 
     public static boolean ulangi() {
