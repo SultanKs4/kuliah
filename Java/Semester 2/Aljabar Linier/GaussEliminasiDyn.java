@@ -73,10 +73,17 @@ public class GaussEliminasiDyn {
             for (int j = i + 1; j < matriksArr.length; j++)
                 sum += matriksArr[i][j] * solution[j];
             solution[i] = (value[i] - sum) / matriksArr[i][i];
+            if (solution[i] == -0) {
+                solution[i] = 0;
+            }
         }
         System.out.println("\nHasilnya : ");
-        for (int i = 0; i < solution.length; i++)
-            System.out.printf("%.3f\n", solution[i]);
+        char A = 65;
+        for (int i = 0; i < solution.length; i++) {
+            System.out.print(A);
+            System.out.printf(" = %.3f\n", solution[i]);
+            A++;
+        }
     }
 
     public static boolean ulangi() {

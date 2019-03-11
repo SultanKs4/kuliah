@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * @author Sultan GaussEliminasiDyn
+ * @author Sultan GaussJordanDyn
  */
 
 public class GaussJordanDyn {
@@ -17,12 +17,12 @@ public class GaussJordanDyn {
         do {
             inputMatriks();
             prosesMenjadi010();
-            prosesdapatBdanA();
+            prosesdapatHasil();
         } while (ulangi());
     }
 
     public static void inputMatriks() {
-        System.out.println("Gauss Eliminasi Ordo Dinamis\n");
+        System.out.println("Gauss Jordan Ordo Dinamis\n");
         ordoMatriks();
         System.out.println("*untuk pemisah nilai matriks dan hasil gunakan spasi*");
         System.out.println("*misal 1 2 7*");
@@ -80,17 +80,20 @@ public class GaussJordanDyn {
         for (int i = 0; i < matriksArr.length; i++) {
             value[i] /= matriksArr[i][i];
             matriksArr[i][i] /= matriksArr[i][i];
+            if (value[i] == -0) {
+                value[i] = 0;
+            }
         }
         System.out.println("\n*Menjadikan matriks diagonal menjadi 1");
         printMatriks();
     }
 
-    public static void prosesdapatBdanA() {
+    public static void prosesdapatHasil() {
         System.out.println("\nHasilnya : ");
         char A = 65;
         for (int i = 0; i < value.length; i++) {
             System.out.print(A);
-            System.out.printf("=%.3f\n", value[i]);
+            System.out.printf(" = %.3f\n", value[i]);
             A++;
         }
     }
