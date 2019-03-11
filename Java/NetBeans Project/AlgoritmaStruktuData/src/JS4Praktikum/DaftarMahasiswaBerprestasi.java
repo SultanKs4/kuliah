@@ -49,4 +49,16 @@ public class DaftarMahasiswaBerprestasi {
             listMhs[i] = tmp;
         }
     }
+
+    public void insertionSort() {
+        for (int i = 1; i < listMhs.length - 1; i++) {
+            double key = listMhs[i].ipk;
+            int j = i - 1;
+            while (j >= 0 && listMhs[j].ipk > key) {
+                listMhs[j + 1].ipk = listMhs[j].ipk;
+                j--;
+            }
+            listMhs[j + 1].ipk = key;
+        }
+    }
 }

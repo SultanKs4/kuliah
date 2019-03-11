@@ -29,11 +29,14 @@ public class Main {
         }
         System.out.println("Data Mahasiswa sebelum sorting = ");
         data.tampil();
-        System.out.println("Data Mahasiswa setelah sorting desc berdasar ipk = ");
+        System.out.println("Data Mahasiswa setelah sorting desc berdasar ipk menggunakan Bubble Sort = ");
         data.bubbleSort();
         data.tampil();
-        System.out.println("Data Mahasiswa setelah sorting asc berdasar ipk = ");
+        System.out.println("Data Mahasiswa setelah sorting asc berdasar ipk menggunakan Selection Sort = ");
         data.selectionSort();
+        data.tampil();
+        System.out.println("Data Mahasiswa setelah sorting asc berdasar ipk menggunakan Insertion Sort = ");
+        data.insertionSort();
         data.tampil();
     }
 }
