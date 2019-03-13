@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static Scanner s = new Scanner(System.in);
     public static Scanner s1 = new Scanner(System.in);
+    public static int[] jumlahArr;
 
     public static void main(String[] args) {
         KeranjangBelanja data = new KeranjangBelanja();
@@ -33,6 +34,9 @@ public class Main {
         data.tampil();
         System.out.println("Data barang setelah sorting ASC berdasarkan harga Total menggunakan Selection Sort");
         data.selectionSort();
+        data.tampil();
+        System.out.println("Data barang setelah sorting ASC berdasarkan jumlah menggunakan Merge Sort");
+        data.mergeSort(0, data.listBarang.length - 1);
         data.tampil();
     }
 }

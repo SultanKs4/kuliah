@@ -5,7 +5,7 @@ package JS4Tugas;
  * @author Sultan
  */
 public class KeranjangBelanja {
-    Barang listBarang[] = new Barang[4];
+    public Barang listBarang[] = new Barang[4];
     int idx;
 
     public void tambah(Barang brg) {
@@ -50,7 +50,45 @@ public class KeranjangBelanja {
         }
     }
 
-    public void mergeSort() {
+    public void mergeSort(int awal, int akhir) {
+        if (akhir - awal == 0) {
 
+        } else if (akhir - awal == 1) {
+            if (listBarang[awal].jumlah > listBarang[akhir].jumlah) {
+                Barang temp = listBarang[awal];
+                listBarang[awal] = listBarang[akhir];
+                listBarang[akhir] = temp;
+            }
+        } else {
+            int tengah = (awal + akhir) / 2;
+            mergeSort(awal, tengah);
+            mergeSort(tengah + 1, akhir);
+
+            Barang[] tempArr = new Barang[akhir - awal + 1];
+            int i = awal, j = tengah + 1;
+            for (int k = awal; k <= akhir; k++) {
+                if (i > tengah || j > akhir) {
+                    if (i > tengah && j <= akhir) {
+                        tempArr[k - awal] = listBarang[j];
+                        j++;
+                    } else if (i <= tengah && j > akhir) {
+                        tempArr[k - awal] = listBarang[i];
+                        i++;
+                    } else
+                        break;
+                } else {
+                    if (listBarang[i].jumlah < listBarang[j].jumlah) {
+                        tempArr[k - awal] = listBarang[i];
+                        i++;
+                    } else {
+                        tempArr[k - awal] = listBarang[j];
+                        j++;
+                    }
+                }
+            }
+            for (int tra = 0; tra < tempArr.length; tra++) {
+                listBarang[awal + tra] = tempArr[tra];
+            }
+        }
     }
 }
