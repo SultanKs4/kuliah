@@ -61,10 +61,10 @@ public class GaussJordanDyn {
                 value[j] -= factor * value[i];
                 for (int k = i; k < matriksArr.length; k++)
                     matriksArr[j][k] -= factor * matriksArr[i][k];
+                System.out.println("\n*Menjadikan matriks angka " + j + " dibawah diagonal menjadi 0");
+                printMatriks();
             }
         }
-        System.out.println("\n*Menjadikan matriks dibawah diagonal menjadi 0");
-        printMatriks();
 
         for (int i = matriksArr.length - 1; i > 0; i--) {
             for (int j = i - 1; j >= 0; j--) {
@@ -72,10 +72,10 @@ public class GaussJordanDyn {
                 value[j] -= factor * value[i];
                 for (int k = matriksArr.length - 1; k >= i; k--)
                     matriksArr[j][k] -= factor * matriksArr[i][k];
+                System.out.println("\n*Menjadikan matriks angka " + j + " diatas diagonal menjadi 0");
+                printMatriks();
             }
         }
-        System.out.println("\n*Menjadikan matriks diatas diagonal menjadi 0");
-        printMatriks();
 
         for (int i = 0; i < matriksArr.length; i++) {
             value[i] /= matriksArr[i][i];
@@ -83,9 +83,9 @@ public class GaussJordanDyn {
             if (value[i] == -0) {
                 value[i] = 0;
             }
+            System.out.println("\n*Menjadikan matriks angka " + i + " diagonal menjadi 1");
+            printMatriks();
         }
-        System.out.println("\n*Menjadikan matriks diagonal menjadi 1");
-        printMatriks();
     }
 
     public static void prosesdapatHasil() {
