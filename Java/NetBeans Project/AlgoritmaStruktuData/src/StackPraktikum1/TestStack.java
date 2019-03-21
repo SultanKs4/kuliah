@@ -1,7 +1,8 @@
 package StackPraktikum1;
 
 /**
- * TestStack
+ * @author Sultan
+ * @see TestStack
  */
 public class TestStack {
     public static void main(String[] args) {

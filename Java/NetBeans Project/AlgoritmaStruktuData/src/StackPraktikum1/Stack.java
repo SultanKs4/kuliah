@@ -2,7 +2,7 @@ package StackPraktikum1;
 
 /**
  * @author Sultan
- * @category Stack
+ * @see Stack
  */
 public class Stack {
     int size, top = -1;
