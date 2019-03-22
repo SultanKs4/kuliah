@@ -1,3 +1,4 @@
+
 package StackPraktikum1;
 
 import java.util.Scanner;
