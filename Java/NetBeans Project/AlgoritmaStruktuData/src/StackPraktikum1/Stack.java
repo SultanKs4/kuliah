@@ -32,9 +32,11 @@ public class Stack {
         if (!IsFull()) {
             top++;
             data[top] = dt;
+            System.out.println("Data berhasil ditambahkan");
         } else {
             System.out.println("===================================");
             System.out.println("Isi Stack Penuh");
+            System.out.println("===================================");
         }
     }
 
@@ -44,9 +46,11 @@ public class Stack {
             top--;
             System.out.println("===================================");
             System.out.println("Data yang di Pop : " + a);
+            System.out.println("===================================");
         } else {
             System.out.println("===================================");
             System.out.println("Tidak dapat Pop, Stack masih kosong");
+            System.out.println("===================================");
         }
     }
 
@@ -67,9 +71,11 @@ public class Stack {
 
             System.out.println("===================================");
             System.out.println("Stack Berhasil dikosongkan");
+            System.out.println("===================================");
         } else {
             System.out.println("===================================");
             System.out.println("Tidak dapat Hapus, Stack Masih Kosong");
+            System.out.println("===================================");
         }
     }
 }
