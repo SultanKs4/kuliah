@@ -2,6 +2,7 @@ package StackPraktikum2;
 
 /**
  * @author Sultan
+ * @see Postfix
  */
 public class Postfix {
     int n, top = -1;

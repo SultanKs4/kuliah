@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author Sultan
- * @deprecated PostfixMain
+ * @see PostfixMain
  */
 public class PostfixMain {
     public static void main(String[] args) {
