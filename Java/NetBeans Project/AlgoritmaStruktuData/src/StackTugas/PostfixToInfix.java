@@ -2,13 +2,13 @@ package StackTugas;
 
 /**
  * @author Sultan
- * @see Infix
+ * @see PostfixToInfix
  */
-public class Infix {
+public class PostfixToInfix {
     int top = -1, size;
     String[] stack;
 
-    public Infix(int total) {
+    public PostfixToInfix(int total) {
         size = total;
         top = -1;
         stack = new String[size];
@@ -34,9 +34,9 @@ public class Infix {
         for (int i = 0; i < stack.length; i++) {
             c = input.charAt(i);
             if (isOperator(c)) {
-                String b = pop();
                 String a = pop();
-                push("(" + a + c + b + ")");
+                String b = pop();
+                push("(" + b + c + a + ")");
             } else if (isOperand(c))
                 push("" + c);
         }

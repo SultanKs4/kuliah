@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 /**
  * @author Sultan
- * @see InfixMain
+ * @see PostfixToInfixMain
  */
-public class InfixMain {
+public class PostfixToInfixMain {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -16,7 +16,7 @@ public class InfixMain {
         input = input.trim();
 
         int size = input.length();
-        Infix InfixConvert = new Infix(size);
+        PostfixToInfix InfixConvert = new PostfixToInfix(size);
         output = InfixConvert.convert(input);
         System.out.println("Infix : " + output);
     }
