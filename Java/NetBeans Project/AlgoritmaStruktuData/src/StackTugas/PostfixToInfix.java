@@ -25,10 +25,6 @@ public class PostfixToInfix {
         return item;
     }
 
-    public String get() {
-        return stack[top];
-    }
-
     public String convert(String input) {
         char c;
         for (int i = 0; i < stack.length; i++) {
@@ -40,7 +36,7 @@ public class PostfixToInfix {
             } else if (isOperand(c))
                 push("" + c);
         }
-        return get();
+        return stack[top];
     }
 
     public boolean isOperand(char c) {
