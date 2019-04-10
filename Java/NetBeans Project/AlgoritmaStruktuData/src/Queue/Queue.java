@@ -93,22 +93,39 @@ public class Queue {
     }
 
     void printPosition(int data) {
-        for (int i = front; i <= rear; i++) {
+        int i = front;
+        int print = 0;
+        while (i != rear) {
             if (q[i] == data) {
-                System.out.println("Data berada pada antrian ke : " + i);
+                print = 1;
                 break;
-            } else if (i == rear && q[i] != data)
-                System.out.println("Data tidak ditemukan pada antrian!");
+            }
+            i = (i + 1) % max;
         }
+        if (q[i] == data)
+            print = 1;
+        if (print == 1)
+            System.out.println("Data berada pada nomor antrian ke : " + i);
+        else
+            System.out.println("Data tidak ditemukan pada antrian!");
     }
 
     void printDataByPos(int position) {
-        for (int i = front; i <= rear; i++) {
+        int i = front;
+        int print = 0;
+        while (i != rear) {
             if (position == i) {
-                System.out.println("Data antrian ke-" + i + " adalah : " + q[i]);
+                print = 1;
                 break;
-            } else if (i == rear && position != i)
-                System.out.println("Posisi antrian tidak ditemukan");
+            }
+            i = (i + 1) % max;
         }
+        if (position == i) {
+            print = 1;
+        }
+        if (print == 1)
+            System.out.println("Data nomor antrian ke-" + i + " adalah : " + q[i]);
+        else
+            System.out.println("Posisi antrian tidak ditemukan");
     }
 }
