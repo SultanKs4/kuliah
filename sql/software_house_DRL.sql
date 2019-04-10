@@ -242,3 +242,116 @@ DELETE FROM departemen WHERE nama LIKE '%dan%';
 
 --Jobsheet 6 DRL
 
+--Tugas 1
+--Praktikum 1
+SELECT *
+FROM departemen;
+
+SELECT *
+FROM karyawan;
+
+SELECT *
+FROM klien;
+
+SELECT *
+FROM proyek;
+
+SELECT *
+FROM penugasan;
+
+--Praktikum 2
+SELECT nama
+FROM karyawan
+WHERE departemen_kode = 'MKT';
+
+SELECT DISTINCT total_jam
+FROM penugasan;
+
+SELECT nik, nama
+FROM karyawan
+WHERE gaji IN (3100000,6900000);
+
+SELECT nik, nama
+FROM karyawan
+WHERE gaji  BETWEEN 2000000 AND 4000000;
+
+SELECT nama, alamat, jenis
+FROM klien
+WHERE nama like 'a%';
+
+SELECT nik, nama, gaji, departemen_kode
+FROM karyawan
+GROUP BY gaji;
+
+SELECT nama, tanggal_mulai
+FROM proyek
+ORDER BY tanggal_mulai ASC;
+
+SELECT *
+FROM karyawan
+WHERE jenis_kelamin = 'WANITA' AND gaji < 5000000;
+
+    SELECT nik
+    FROM penugasan
+UNION
+    SELECT nik_manajer
+    FROM departemen;
+
+    SELECT nik
+    FROM penugasan
+UNION ALL
+    SELECT nik_manajer
+    FROM departemen;
+
+--Praktikum 3
+SELECT nomor_proyek, nik, total_jam
+FROM penugasan
+WHERE total_jam  in (SELECT MAX(total_jam)
+FROM penugasan);
+
+SELECT nomor_proyek, nik, total_jam
+FROM penugasan
+WHERE total_jam < ALL (SELECT total_jam
+FROM penugasan
+WHERE nomor_proyek = 1);
+
+--Praktikum 4
+SELECT AVG(gaji)
+FROM karyawan;
+
+SELECT MAX(gaji)
+FROM karyawan;
+
+SELECT MIN(gaji)
+FROM karyawan;
+
+SELECT SUM(gaji)
+FROM karyawan;
+
+SELECT COUNT(gaji)
+FROM karyawan;
+
+--tugas 2
+SELECT MIN(tanggal_selesai) AS lama, MAX(tanggal_selesai) AS baru
+FROM proyek;
+
+--tugas 3
+SELECT COUNT(nama)
+FROM karyawan
+WHERE departemen_kode LIKE 'CSR%';
+
+--tugas 4
+SELECT nik_manajer
+FROM departemen
+WHERE nik_manajer IN(SELECT nik
+FROM penugasan);
+
+--tugas 5
+SELECT nik, nomor_proyek, total_jam, COUNT(*)
+FROM penugasan
+GROUP BY nomor_proyek
+ASC HAVING COUNT
+(*) < 2;
+
+--change SQL MODE to group gaji on variable sql mode first command is :
+ONLY_FULL_GROUP_BY,
