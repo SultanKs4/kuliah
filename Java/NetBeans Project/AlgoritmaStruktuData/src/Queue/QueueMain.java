@@ -44,7 +44,7 @@ public class QueueMain {
             case 7:
                 System.out.print("Masukkan Posisi : ");
                 int position = sc.nextInt();
-                qobj.printDataByPos(position);
+                qobj.printDataByPos(position - 1);
                 break;
             }
         } while (pil != 8);

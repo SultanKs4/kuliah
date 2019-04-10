@@ -78,7 +78,7 @@ public class QueueNasabah {
             int i = front;
             while (i != rear) {
                 q[i].print();
-                i++;
+                i = (i + 1) % max;
             }
             q[i].print();
             System.out.println("Jumlah Antrian = " + size);

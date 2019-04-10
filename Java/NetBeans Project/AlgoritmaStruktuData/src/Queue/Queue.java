@@ -105,7 +105,7 @@ public class Queue {
         if (q[i] == data)
             print = 1;
         if (print == 1)
-            System.out.println("Data berada pada nomor antrian ke : " + i);
+            System.out.println("Data berada pada nomor antrian ke : " + (i + 1));
         else
             System.out.println("Data tidak ditemukan pada antrian!");
     }
@@ -124,7 +124,7 @@ public class Queue {
             print = 1;
         }
         if (print == 1)
-            System.out.println("Data nomor antrian ke-" + i + " adalah : " + q[i]);
+            System.out.println("Data nomor antrian ke-" + (i + 1) + " adalah : " + q[i]);
         else
             System.out.println("Posisi antrian tidak ditemukan");
     }
