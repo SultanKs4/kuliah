@@ -96,23 +96,40 @@ public class QueueNasabah {
     }
 
     void printPosition(Nasabah data) {
-        for (int i = front; i <= rear; i++) {
+        int i = front;
+        int print = 0;
+        while (i != rear) {
             if (q[i].noRekening.equals(data.noRekening) && q[i].nama.equals(data.nama)) {
-                System.out.println("Data berada pada antrian ke : " + (i + 1));
+                print = 1;
                 break;
-            } else if (i == rear && q[i].noRekening != data.noRekening && q[i].nama != data.nama)
-                System.out.println("Data tidak ditemukan pada antrian!");
+            }
+            i = (i + 1) % max;
         }
+        if (q[i].noRekening.equals(data.noRekening) && q[i].nama.equals(data.nama))
+            print = 1;
+        if (print == 1)
+            System.out.println("Data berada pada nomor antrian ke : " + (i + 1));
+        else
+            System.out.println("Data tidak ditemukan pada antrian!");
     }
 
     void printDataByPos(int position) {
-        for (int i = front; i <= rear; i++) {
+        int i = front;
+        int print = 0;
+        while (i != rear) {
             if (position == i) {
-                System.out.println("Data antrian ke-" + (i + 1) + " adalah : ");
-                q[i].print();
+                print = 1;
                 break;
-            } else if (i == rear && position != i)
-                System.out.println("Posisi antrian tidak ditemukan");
+            }
+            i = (i + 1) % max;
         }
+        if (position == i) {
+            print = 1;
+        }
+        if (print == 1) {
+            System.out.println("Data nomor antrian ke-" + (i + 1) + " adalah : ");
+            q[i].print();
+        } else
+            System.out.println("Posisi antrian tidak ditemukan");
     }
 }
