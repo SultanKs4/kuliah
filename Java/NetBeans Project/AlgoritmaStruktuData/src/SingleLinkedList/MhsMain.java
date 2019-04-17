@@ -18,7 +18,6 @@ public class MhsMain {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println(e.getClass());
         }
     }
 
@@ -65,7 +64,7 @@ public class MhsMain {
             String nama1 = scan1.nextLine();
             System.out.print("Masukkan Nim yang akan ditambahkan : ");
             int nim1 = scan.nextInt();
-            System.out.print("Masukkan referensi Index : ");
+            System.out.print("Masukkan Index baru : ");
             int index = scan.nextInt();
             data.add(nama1, nim1, index);
             data.print();

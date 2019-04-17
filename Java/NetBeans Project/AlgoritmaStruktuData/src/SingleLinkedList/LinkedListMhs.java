@@ -136,27 +136,24 @@ public class LinkedListMhs {
     public void removeKey(int nim) throws Exception {
         if (isEmpty())
             throw new Exception("LinkedListMhs Kosong");
-        int idx = -1;
-        NodeMhs keyLoop = head;
-        if (nim == keyLoop.nim)
+        NodeMhs prev = head;
+        NodeMhs cur = head.next;
+        if (nim == prev.nim)
             removeFirst();
-        for (int i = 1; i < size; i++) {
-            if (nim == get(i))
-                idx = i;
-            keyLoop = keyLoop.next;
-        }
-        if (idx == -1)
-            throw new Exception("Data yang dicari tidak ada");
-        else {
-            NodeMhs prev = head;
-            NodeMhs cur = head.next;
-            for (int i = 1; i < idx; i++) {
+        else if (size > 1) {
+            for (int i = 1; i < size; i++) {
+                if (nim != cur.nim && i == (size - 1))
+                    throw new Exception("Data yang dicari tidak ada");
+                if (nim == cur.nim) {
+                    prev.next = cur.next;
+                    size--;
+                    break;
+                }
                 prev = cur;
                 cur = prev.next;
             }
-            prev.next = cur.next;
-            size--;
-        }
+        } else
+            throw new Exception("Data yang dicari tidak ada");
     }
 
     public void removeFirst() throws Exception {
