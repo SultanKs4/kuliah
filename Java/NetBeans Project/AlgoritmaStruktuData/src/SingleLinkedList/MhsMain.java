@@ -129,7 +129,8 @@ public class MhsMain {
         case 2:
             System.out.print("Masukkan NIM yang akan dicari : ");
             int item1 = scan.nextInt();
-            System.out.println("Posisi NIM " + item1 + " : " + data.getKey(item1));
+            data.print1ByPos(data.getKey(item1));
+            System.out.println("Posisi : " + data.getKey(item1));
             break;
         default:
             System.out.println("Input tidak valid!");

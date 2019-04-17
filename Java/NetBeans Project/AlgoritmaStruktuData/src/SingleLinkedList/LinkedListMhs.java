@@ -100,7 +100,7 @@ public class LinkedListMhs {
 
     public int getKey(int nim) throws Exception {
         if (isEmpty())
-            throw new Exception("LinkedListMhs Kosong");
+            throw new Exception("LinkedList Kosong");
         NodeMhs tmp = head;
         int i = -1;
         while (tmp.next != null) {
@@ -135,7 +135,7 @@ public class LinkedListMhs {
 
     public void removeKey(int nim) throws Exception {
         if (isEmpty())
-            throw new Exception("LinkedListMhs Kosong");
+            throw new Exception("LinkedList Kosong");
         NodeMhs prev = head;
         NodeMhs cur = head.next;
         if (nim == prev.nim)
