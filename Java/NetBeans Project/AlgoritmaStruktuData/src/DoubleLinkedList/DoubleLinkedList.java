@@ -159,11 +159,13 @@ public class DoubleLinkedList {
         }
         Node tmp = head;
         int idx = -1;
-        while (tmp.next != null) {
+        int i = 0;
+        while (tmp != null) {
             if (tmp.data == item) {
+                idx = i;
                 break;
             }
-            idx++;
+            i++;
             tmp = tmp.next;
         }
         if (idx == -1)
@@ -187,7 +189,7 @@ public class DoubleLinkedList {
                 System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
             }
-            System.out.println("Berhasil Diisi");
+            System.out.println();
         } else {
             System.out.println("LinkedList Kosong");
         }
