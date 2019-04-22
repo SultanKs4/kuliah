@@ -166,7 +166,7 @@ public class DoubleLinkedList {
         if (!isEmpty()) {
             Node tmp = head;
             while (tmp != null) {
-                System.out.println(tmp.data + "\t");
+                System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
             }
             System.out.println("Berhasil Diisi");

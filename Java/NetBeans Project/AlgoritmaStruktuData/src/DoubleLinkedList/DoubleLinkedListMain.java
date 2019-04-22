@@ -31,7 +31,7 @@ public class DoubleLinkedListMain {
         dll.print();
         System.out.println("Size : " + dll.size());
         System.out.println("===================================");
-        dll.clear();
+        // dll.clear();
         dll.print();
         System.out.println("Size : " + dll.size());
     }
