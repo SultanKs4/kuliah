@@ -153,6 +153,24 @@ public class DoubleLinkedList {
         return tmp.data;
     }
 
+    public int getByKey(int item) throws Exception {
+        if (isEmpty()) {
+            throw new Exception("LinkedList Kosong");
+        }
+        Node tmp = head;
+        int idx = -1;
+        while (tmp.next != null) {
+            if (tmp.data == item) {
+                break;
+            }
+            idx++;
+            tmp = tmp.next;
+        }
+        if (idx == -1)
+            throw new Exception("Data tidak ada");
+        return idx;
+    }
+
     public int size() {
         return size;
     }
