@@ -173,6 +173,16 @@ public class DoubleLinkedList {
         return idx;
     }
 
+    public void bubbleSortDESC() throws Exception {
+        if (isEmpty())
+            throw new Exception("LinkedList Kosong");
+        for (int i = 0; i < size; i++) {
+            for (int j = 1; i < size - i; i++) {
+
+            }
+        }
+    }
+
     public int size() {
         return size;
     }

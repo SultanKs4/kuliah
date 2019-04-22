@@ -26,7 +26,7 @@ public class DoubleLinkedListMainMenu {
         System.out.println("Memilih menu");
         System.out.println("1. Tambah Awal\n2. Tambah Akhir\n3. Tambah Data Indeks Tertentu");
         System.out.println("4. Hapus Awal\n5. Hapus Akhir\n6. Hapus Indeks Tertentu");
-        System.out.println("7. Cetak Data\n8. Cari\n9. Keluar");
+        System.out.println("7. Cetak Data\n8. Cari\n9. Bubble Sort Descending\n10. Keluar");
         System.out.println("================================");
         System.out.print(">> ");
         int piliihan = scan.nextInt();
@@ -76,6 +76,9 @@ public class DoubleLinkedListMainMenu {
             System.out.println("Data : " + data3 + " ditemukan pada indeks ke : " + dll.getByKey(data3));
             break;
         case 9:
+            System.out.println("\nBubble Sort Descending");
+            break;
+        case 10:
             throw new Exception("Keluar");
         default:
             System.out.println("Data Invalid");
