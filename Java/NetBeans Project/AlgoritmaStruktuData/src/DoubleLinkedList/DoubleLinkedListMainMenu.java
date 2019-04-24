@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class DoubleLinkedListMainMenu {
     static DoubleLinkedList dll = new DoubleLinkedList();
     static Scanner scan = new Scanner(System.in);
+    static int data, index;
 
     public static void main(String[] args) {
         try {
@@ -26,7 +27,7 @@ public class DoubleLinkedListMainMenu {
         System.out.println("Memilih menu");
         System.out.println("1. Tambah Awal\n2. Tambah Akhir\n3. Tambah Data Indeks Tertentu");
         System.out.println("4. Hapus Awal\n5. Hapus Akhir\n6. Hapus Indeks Tertentu");
-        System.out.println("7. Cetak Data\n8. Cari\n9. Bubble Sort Descending\n10. Keluar");
+        System.out.println("7. Cetak Data\n8. Cari\n9. Bubble Sort Ascending\n10. Keluar");
         System.out.println("================================");
         System.out.print(">> ");
         int piliihan = scan.nextInt();
@@ -36,20 +37,20 @@ public class DoubleLinkedListMainMenu {
         switch (piliihan) {
         case 1:
             System.out.print(StringInput);
-            int data = scan.nextInt();
+            data = scan.nextInt();
             dll.addFirst(data);
             break;
         case 2:
             System.out.print(StringInput);
-            int data1 = scan.nextInt();
-            dll.addLast(data1);
+            data = scan.nextInt();
+            dll.addLast(data);
             break;
         case 3:
             System.out.print(StringInput);
-            int data2 = scan.nextInt();
+            data = scan.nextInt();
             System.out.print("Masukan Posisi indeks data : ");
-            int index = scan.nextInt();
-            dll.add(data2, index);
+            index = scan.nextInt();
+            dll.add(data, index);
             break;
         case 4:
             dll.removeFirst();
@@ -61,9 +62,9 @@ public class DoubleLinkedListMainMenu {
             break;
         case 6:
             System.out.print("Masukan Posisi indeks data yang akan dihapus : ");
-            int index1 = scan.nextInt();
-            System.out.println("\nData posisi : " + index1 + " dengan detail data : " + dll.get(index1));
-            dll.remove(index1);
+            index = scan.nextInt();
+            System.out.println("\nData posisi : " + index + " dengan detail data : " + dll.get(index));
+            dll.remove(index);
             System.out.println("Telah terhapus");
             break;
         case 7:
@@ -72,11 +73,13 @@ public class DoubleLinkedListMainMenu {
             break;
         case 8:
             System.out.print("\nMasukan data yang ingin dicari : ");
-            int data3 = scan.nextInt();
-            System.out.println("Data : " + data3 + " ditemukan pada indeks ke : " + dll.getByKey(data3));
+            data = scan.nextInt();
+            System.out.println("Data : " + data + " ditemukan pada indeks ke : " + dll.getByKey(data));
             break;
         case 9:
-            System.out.println("\nBubble Sort Descending");
+            System.out.println("\nBubble Sort Ascending");
+            dll.bubbleSortASC();
+            System.out.println("Data telah tersorting secara ASCENDING");
             break;
         case 10:
             throw new Exception("Keluar");
