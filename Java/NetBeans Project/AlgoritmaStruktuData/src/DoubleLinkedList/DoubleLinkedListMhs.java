@@ -182,7 +182,7 @@ public class DoubleLinkedListMhs {
         if (isEmpty())
             throw new Exception("LinkedList Kosong");
         NodeMhs tmp = head;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 1; i++) {
             for (int j = 1; j < size - i; j++) {
                 if (tmp.data.nilai < tmp.next.data.nilai) {
                     MhsData t = tmp.data;
