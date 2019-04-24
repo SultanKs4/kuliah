@@ -36,7 +36,7 @@ public class DoubleLinkedListMainMhs {
         System.out.println("================================");
 
         String StringInput = "\nMasukan nama : ";
-        String intInput = "\nMasukan nilai : ";
+        String intInput = "Masukan nilai : ";
         switch (piliihan) {
         case 1:
             System.out.print(StringInput);
@@ -82,7 +82,7 @@ public class DoubleLinkedListMainMhs {
             dll.print();
             break;
         case 8:
-            System.out.print("\nMasukan data yang ingin dicari : ");
+            System.out.print("\nMasukan nilai yang ingin dicari : ");
             nilai = scan.nextInt();
             System.out.println("Nilai : " + nilai + " ditemukan pada indeks ke : " + dll.getByKey(nilai));
             break;
