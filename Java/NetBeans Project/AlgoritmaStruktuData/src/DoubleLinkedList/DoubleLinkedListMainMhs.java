@@ -82,9 +82,13 @@ public class DoubleLinkedListMainMhs {
             dll.print();
             break;
         case 8:
-            System.out.print("\nMasukan nilai yang ingin dicari : ");
+            System.out.print("\nMasukan nama yang ingin dicari : ");
+            nama = scan1.nextLine();
+            System.out.print("Masukan nilai yang ingin dicari : ");
             nilai = scan.nextInt();
-            System.out.println("Nilai : " + nilai + " ditemukan pada indeks ke : " + dll.getByKey(nilai));
+            System.out.println("Nama : " + nama);
+            System.out.println("Nilai : " + nilai);
+            System.out.println("Ditemukan pada indeks ke : " + dll.getByKey(nama, nilai));
             break;
         case 9:
             System.out.println("\nBubble Sort Descending");

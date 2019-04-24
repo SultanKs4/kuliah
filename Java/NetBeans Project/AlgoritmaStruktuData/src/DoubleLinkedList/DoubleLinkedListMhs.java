@@ -158,7 +158,7 @@ public class DoubleLinkedListMhs {
         return idx;
     }
 
-    public int getByKey(int nilai) throws Exception {
+    public int getByKey(String nama, int nilai) throws Exception {
         if (isEmpty()) {
             throw new Exception("LinkedList Kosong");
         }
@@ -166,7 +166,7 @@ public class DoubleLinkedListMhs {
         int idx = -1;
         int i = 0;
         while (tmp != null) {
-            if (tmp.data.nilai == nilai) {
+            if (tmp.data.nilai == nilai && tmp.data.nama.equals(nama)) {
                 idx = i;
                 break;
             }
