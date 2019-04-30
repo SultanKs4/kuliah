@@ -72,6 +72,22 @@ public class BinaryTree {
         return hasil;
     }
 
+    public Node min() {
+        Node tmp = root;
+        while (tmp.left != null) {
+            tmp = tmp.left;
+        }
+        return tmp;
+    }
+
+    public Node max() {
+        Node tmp = root;
+        while (tmp.right != null) {
+            tmp = tmp.right;
+        }
+        return tmp;
+    }
+
     void traversePreOrder(Node node) {
         if (node != null) {
             System.out.print(" " + node.data);
