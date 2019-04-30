@@ -88,6 +88,21 @@ public class BinaryTree {
         return tmp;
     }
 
+    public void leaf(Node node) {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data + " ");
+            return;
+        }
+        if (node.left != null)
+            leaf(node.left);
+        if (node.right != null)
+            leaf(node.right);
+    }
+
     void traversePreOrder(Node node) {
         if (node != null) {
             System.out.print(" " + node.data);

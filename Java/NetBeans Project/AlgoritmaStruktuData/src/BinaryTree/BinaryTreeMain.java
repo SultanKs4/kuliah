@@ -27,9 +27,6 @@ public class BinaryTreeMain {
         System.out.println("");
         System.out.println("Min : " + bt.min().data);
         System.out.println("Max : " + bt.max().data);
-        System.out.println("Find " + bt.find(5));
-        bt.delete(8);
-        bt.traversePreOrder(bt.root);
-        System.out.println("");
+        bt.leaf(bt.root);
     }
 }
