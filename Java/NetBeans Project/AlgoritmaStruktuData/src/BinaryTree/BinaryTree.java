@@ -42,6 +42,20 @@ public class BinaryTree {
         }
     }
 
+    public void addRecursive(int data) {
+        root = recursiveAdd(root, data);
+    }
+
+    private Node recursiveAdd(Node current, int data) {
+        if (isEmpty() || current == null)
+            return new Node(data);
+        if (data < current.data)
+            current.left = recursiveAdd(current.left, data);
+        else
+            current.right = recursiveAdd(current.right, data);
+        return current;
+    }
+
     boolean find(int data) {
         boolean hasil = false;
         Node current = root;
