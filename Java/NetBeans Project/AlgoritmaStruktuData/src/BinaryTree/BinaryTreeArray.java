@@ -6,7 +6,7 @@ package BinaryTree;
  */
 public class BinaryTreeArray {
     int[] data;
-    int idxLast;
+    int idxLast = -1;
 
     public BinaryTreeArray(int max) {
         data = new int[max];
@@ -17,11 +17,9 @@ public class BinaryTreeArray {
         this.idxLast = idxLast;
     }
 
-    void add(int data, int idxLast) throws Exception {
-        if (idxLast >= this.data.length)
-            throw new Exception("Array full");
+    void add(int data) {
+        idxLast++;
         this.data[idxLast] = data;
-        this.idxLast = idxLast;
     }
 
     void traverseInOrder(int idxStart) {
@@ -47,5 +45,4 @@ public class BinaryTreeArray {
             System.out.print(data[idxStart] + " ");
         }
     }
-
 }

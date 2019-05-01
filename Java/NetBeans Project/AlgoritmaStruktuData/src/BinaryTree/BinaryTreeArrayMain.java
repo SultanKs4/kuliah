@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class BinaryTreeArrayMain {
     static Scanner scan = new Scanner(System.in);
     static BinaryTreeArray bta;
-    static int data, idxLast = 0;
+    static int data, max;
 
     public static void main(String[] args) {
         try {
-            System.out.print("Max Index Array : ");
-            int max = scan.nextInt();
+            System.out.print("Length Array : ");
+            max = scan.nextInt();
             bta = new BinaryTreeArray(max);
             while (true) {
                 menu();
@@ -34,10 +34,13 @@ public class BinaryTreeArrayMain {
         System.out.println("================================");
         switch (pilihan) {
         case 1:
-            System.out.print("input array index ke-" + idxLast + " : ");
-            data = scan.nextInt();
-            bta.add(data, idxLast);
-            idxLast++;
+            if (bta.idxLast + 1 >= max)
+                System.out.println("Array Full");
+            else {
+                System.out.print("input array index ke-" + (bta.idxLast + 1) + " : ");
+                data = scan.nextInt();
+                bta.add(data);
+            }
             break;
         case 2:
             bta.traverseInOrder(0);
