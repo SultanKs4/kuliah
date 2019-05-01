@@ -47,7 +47,7 @@ public class BinaryTree {
     }
 
     private Node recursiveAdd(Node current, int data) {
-        if (isEmpty() || current == null)
+        if (current == null)
             return new Node(data);
         if (data < current.data)
             current.left = recursiveAdd(current.left, data);
@@ -72,7 +72,11 @@ public class BinaryTree {
         return hasil;
     }
 
-    public Node min() {
+    public int min() {
+        return minStep().data;
+    }
+
+    private Node minStep() {
         Node tmp = root;
         while (tmp.left != null) {
             tmp = tmp.left;
@@ -80,7 +84,11 @@ public class BinaryTree {
         return tmp;
     }
 
-    public Node max() {
+    public int max() {
+        return maxStep().data;
+    }
+
+    private Node maxStep() {
         Node tmp = root;
         while (tmp.right != null) {
             tmp = tmp.right;
@@ -88,19 +96,33 @@ public class BinaryTree {
         return tmp;
     }
 
-    public void leaf(Node node) {
-        if (isEmpty()) {
-            System.out.println("Tree is empty!");
+    public void leaf() {
+        leafStep(root);
+        System.out.println();
+    }
+
+    private void leafStep(Node node) {
+        if (node == null)
             return;
-        }
-        if (node.left == null && node.right == null) {
+        if (node.left == null && node.right == null)
             System.out.print(node.data + " ");
-            return;
+        else {
+            leafStep(node.left);
+            leafStep(node.right);
         }
-        if (node.left != null)
-            leaf(node.left);
-        if (node.right != null)
-            leaf(node.right);
+    }
+
+    public int countLeaf() {
+        return countLeafStep(root);
+    }
+
+    private int countLeafStep(Node node) {
+        if (node == null)
+            return 0;
+        if (node.left == null && node.right == null)
+            return 1;
+        else
+            return countLeafStep(node.left) + countLeafStep(node.right);
     }
 
     void traversePreOrder(Node node) {
