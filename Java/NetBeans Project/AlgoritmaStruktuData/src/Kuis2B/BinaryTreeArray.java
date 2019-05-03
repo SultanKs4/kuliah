@@ -72,13 +72,9 @@ public class BinaryTreeArray {
     void getHeight() {
         int count = 0;
         int countIdx = idxLast;
-        for (int i = idxLast; i >= 0; i--) {
-            System.out.println(countIdx);
+        while (countIdx != 0) {
             countIdx = countIdx / 2;
-            System.out.println(countIdx);
             count++;
-            if (countIdx == 0)
-                break;
         }
         System.out.println("Height adalah : " + count);
     }
