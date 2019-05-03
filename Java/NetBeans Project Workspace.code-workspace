@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "NetBeans Project"
+		}
+	],
+	"settings": {
+		"java.dependency.packagePresentation": "hierarchical",
+		"java.format.settings.url": "eclipse-formatter.xml"
+	}
+}
