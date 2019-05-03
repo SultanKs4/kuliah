@@ -41,15 +41,15 @@ public class BinaryTreeArrayMain {
             bta.add(0);
             bta.add(45);
             bta.add(50);
-            // System.out.print("cari parent dari data : ");
-            // int data = scan.nextInt();
-            // bta.getParent(data);
-            // System.out.println("cari child dari data : ");
-            // int data1 = scan.nextInt();
-            // bta.getChild(data1);
-            // System.out.println("cari sibling dari data : ");
-            // int data2 = scan.nextInt();
-            // bta.getSibling(data2);
+            System.out.print("cari parent dari data : ");
+            int data = scan.nextInt();
+            bta.getParent(data);
+            System.out.println("cari child dari data : ");
+            int data1 = scan.nextInt();
+            bta.getChild(data1);
+            System.out.println("cari sibling dari data : ");
+            int data2 = scan.nextInt();
+            bta.getSibling(data2);
             bta.getHeight();
         } catch (Exception e) {
             System.out.println(e.getMessage());

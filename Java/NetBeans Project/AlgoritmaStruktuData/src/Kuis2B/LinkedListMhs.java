@@ -4,6 +4,16 @@ public class LinkedListMhs {
     NodeKuis head;
     int size;
 
+    public class NodeKuis {
+        MhsNode data;
+        NodeKuis next;
+
+        public NodeKuis(MhsNode data, NodeKuis next) {
+            this.data = data;
+            this.next = next;
+        }
+    }
+
     public LinkedListMhs() {
         head = null;
         size = 0;
