@@ -25,6 +25,26 @@ public class BinarySearchTree {
         return false;
     }
 
+    private Node findNode(int id) {
+        Node current = root;
+        while (current != null) {
+            if (current.data == id)
+                break;
+            else if (current.data > id)
+                current = current.left;
+            else
+                current = current.right;
+        }
+        return current;
+    }
+
+    public void displayFindNode(int id) {
+        if (findNode(id) != null)
+            System.out.println(findNode(id).data);
+        else
+            System.out.println("Node tidak ada!");
+    }
+
     public void insert(int id) {
         Node newNode = new Node(id);
         if (root == null) {
@@ -130,5 +150,19 @@ public class BinarySearchTree {
             succeccor.right = deleteNode.right;
         }
         return succeccor;
+    }
+
+    public int getMax() {
+        Node current = root;
+        while (current.right != null)
+            current = current.right;
+        return current.data;
+    }
+
+    public int getMin() {
+        Node current = root;
+        while (current.left != null)
+            current = current.left;
+        return current.data;
     }
 }
