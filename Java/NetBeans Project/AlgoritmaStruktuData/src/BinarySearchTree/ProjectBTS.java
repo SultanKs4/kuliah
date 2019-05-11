@@ -40,6 +40,8 @@ public class ProjectBTS {
             System.out.print("Masukkan data : ");
             data = scan.nextInt();
             System.out.println("Cek apakah node " + data + " ada : " + b.find(data));
+            System.out.print("Cek ada node " + data + " : ");
+            b.displayFindNode(data);
             break;
         case 4:
             System.out.println("Cetak tree dengan metode in order : ");
