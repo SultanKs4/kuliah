@@ -59,9 +59,14 @@ public class graph {
     }
 
     public void removeEdge(int source, int destination) throws Exception {
-        for (int i = 0; i < vertex; i++) {
-            if (i == destination) {
-                list[source].remove(destination);
+        for (int i = 0; i < list[source].size(); i++) {
+            if (list[source].get(i) == destination)
+                list[source].remove(i);
+        }
+        if (type == 1) {
+            for (int i = 0; i < list[destination].size(); i++) {
+                if (list[destination].get(i) == source)
+                    list[destination].remove(i);
             }
         }
     }
