@@ -82,8 +82,10 @@ AS `Jumlah
 SELECT *
 FROM Mahasiswa INNER JOIN nama_tabel_kedua ON nama_kolom_join_tabel_pertama = nama_kolom_join_tabel_kedua;
 
-SELECT `Mahasiswa
-`.`nim` AS `NIM`,`Mahasiswa`.`nama_mhs` AS `Nama Mahasiswa`,`Mata_Kuliah`.`nama_mk` AS `Nama Matakuliah`,`nilai`.`nilai_huruf` AS `Nilai Huruf` FROM Mahasiswa,Mata_Kuliah,nilai WHERE `Mahasiswa`.`nim`= `nilai`.`nim` AND `Mata_Kuliah`.`kode_mk` = `nilai`.`kode_mk` ORDER BY `Nilai Huruf`;
+SELECT `Mahasiswa`.`nim` AS `NIM`,
+`Mahasiswa`.`nama_mhs` AS `Nama Mahasiswa`,
+`Mata_Kuliah`.`nama_mk` AS `Nama Matakuliah`,
+`nilai`.`nilai_huruf` AS `Nilai Huruf` FROM Mahasiswa,Mata_Kuliah,nilai WHERE `Mahasiswa`.`nim`= `nilai`.`nim` AND `Mata_Kuliah`.`kode_mk` = `nilai`.`kode_mk` ORDER BY `Nilai Huruf`;
 
 select mahasiswa.*, mata_kuliah.nama_mk, nilai.nilai_huruf
 from mahasiswa, mata_kuliah, nilai
